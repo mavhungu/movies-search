@@ -1,16 +1,36 @@
-<h1 class="">{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!--h1 class="">{{!title}}</h1>
+<p>Welcome to {{!title}}</p-->
 
-
+<div class="container">
     <div class="row justify-content-center align-content-center">
-        <div class="col-5" style="background: ghostwhite; border-radius: 4px">
-            <form method="post" action="/users" class="p2 m-4">
-                <!--input type="hidden" name="_csrf" value="{{_csrfToken}}"-->
-                <fieldset class="form-group">
-                    <input type="text" name="name" class="form-control">
-                </fieldset>
-                <button type="submit" class="btn btn-primary btn-block">Send</button>
+        <div class="col-8 mb-4" style="background: ghostwhite; border-radius: 4px">
+            <form method="post" action="/users" class="p2 my-4">
+                <!--input type="hidden" name="_csrf" value="{!{_csrfToken}}"-->
+                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" >
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary my-2 my-sm-0">Search</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
-
+</div>
+    <div class="container">
+        <div class="row align-items-center">
+            {{#each name}}
+                {{#each Search}}
+                    <div class="col-6 col-md-4 mt-3">
+                        <div class="card border-light">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-center font-weight-bold"> {{Title}}</h5>
+                                <img src="{{Poster}}" alt="poster" />
+                                <p class="card-text text-center">( {{Year}} )</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/each}}
+        </div>
+    </div>
