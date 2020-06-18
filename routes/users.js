@@ -6,27 +6,22 @@ var fetch = require('node-fetch');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  User.find({})
-      .then((users)=>{
-        res.render('user',{
-            user: users
-            });
-      })
-      .catch((e)=>{
-        console.log("Error");
-      });
+    res.send('respond with index')
 });
-router.route('/').post( (req, res) =>{
-  const username = req.body.name;
-  const newUser = new User({username: username});
-  newUser.save()
-      .then((users)=>{
-        res.render('post',{
-          name: users.username,
-          data:'respond with a resource post'});
-      }).catch((error)=>{
-    console.log("Error", error);
-  });
+router.post('/', (req, res) =>{
+  let search = req.body.search_movie;
+  console.log(search);
+    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}`)
+        .then(res=> res.json())
+        .then(body => { const tt = body;
+            res.render('movie', {
+                name: {tt}
+            });
+        })
+        .catch((e)=>{
+            res.status(500).send(e);
+        });
+
 });
 
 router.get('/edit/:id', function(req, res, next) {

@@ -1,14 +1,14 @@
 <!--h1 class="">{{!title}}</h1>
 <p>Welcome to {{!title}}</p-->
 
-<div class="container">
-    <div class="row justify-content-center align-content-center">
-        <div class="col-8 mb-4" style="background: ghostwhite; border-radius: 4px">
+<div class="container mt-5">
+    <div class="row justify-content-center align-content-center mt-5">
+        <div class="col-8 mb-4 mt-5" style="background: ghostwhite; border-radius: 4px">
             <form method="post" action="/users" class="p2 my-4">
                 <!--input type="hidden" name="_csrf" value="{!{_csrfToken}}"-->
                 <label class="sr-only" for="inlineFormInputGroup">Username</label>
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" >
+                    <input type="text" name="search_movie" class="form-control" id="search_movie" placeholder="Search" >
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-primary my-2 my-sm-0">Search</button>
                     </div>
@@ -18,7 +18,7 @@
     </div>
 </div>
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center mb-5">
             {{#each name}}
                 {{#each Search}}
                     <div class="col-md-6 mt-3">
