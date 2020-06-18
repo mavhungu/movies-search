@@ -11,12 +11,13 @@ router.get('/', function(req, res, next) {
 router.post('/', (req, res) =>{
   let search = req.body.search_movie;
   console.log(search);
-    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}`)
+    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}&plot=full&v=2`)
         .then(res=> res.json())
         .then(body => { const tt = body;
             res.render('movie', {
                 name: {tt}
             });
+            console.log(tt)
         })
         .catch((e)=>{
             res.status(500).send(e);

@@ -8,7 +8,7 @@
                 <!--input type="hidden" name="_csrf" value="{!{_csrfToken}}"-->
                 <label class="sr-only" for="inlineFormInputGroup">Username</label>
                 <div class="input-group mb-2">
-                    <input type="text" name="search_movie" class="form-control" id="search_movie" placeholder="Search" >
+                    <input type="text" name="search_movie" value="{{#each name}}{{Title}}{{/each}}" class="form-control" id="search_movie" placeholder="Search" required >
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-primary my-2 my-sm-0">Search</button>
                     </div>
@@ -25,7 +25,7 @@
                         <div class="card border-light">
                             <div class="card-body text-center">
                                 <h5 class="card-title text-center font-weight-bold"> {{Title}}</h5>
-                                <img src="{{Poster}}" alt="poster" />
+                                <a href="/{{imdbID}}"><img src="{{Poster}}" alt="poster" /></a>
                                 <p class="card-text text-center">( {{Year}} )</p>
                             </div>
                         </div>
@@ -34,3 +34,35 @@
             {{/each}}
         </div>
     </div>
+
+<div class="container">
+    <div class="row align-items-center mb-5 justify-content-center">
+        {{#each name}}
+            <div class="card bg-light mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{Poster}}" class="card-img mt-4 mb-4 ml-2" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{Title}} <span class="">{{Year}}</span></h5>
+                            <p class="card-text">{{Plot}}</p>
+                            <p class="card-text text-primary fon">{{Actors}}</p>
+                            <p class="card-text"><small class="text-muted">{{Released}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5 justify-content-center" style="height: 100vh">
+        {{#each name}}
+            <p class="text-muted text-center">{{Error}}</p>
+        {{/each}}
+    </div>
+</div>
+
+
