@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let User = require('../db/models/users.Model');
+//let User = require('../db/models/users.Model');
 var axios = require('axios');
 var fetch = require('node-fetch');
 

@@ -5,7 +5,7 @@ var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-require('./db/mongoose');
+//require('./db/mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
