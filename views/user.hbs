@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-4">
+            <table class="table table-responsive table-hover">
+                <thead class="bg-info">
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                </thead>
+                <tbody>
+                {{#each user}}
+                    <tr>
+                        <td>
+                            {{username}}
+                        </td>
+                        <td><a href="/users/edit/{{_id}}" route="put" type="button" class="btn btn-success">Edit</a></td>
+                        <td><a href="/users/delete/{{_id}}" route="delete"  type="button" class="btn btn-danger">Delet</a></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

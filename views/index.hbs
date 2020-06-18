@@ -1,0 +1,16 @@
+<h1 class="">{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+
+    <div class="row justify-content-center align-content-center">
+        <div class="col-5" style="background: ghostwhite; border-radius: 4px">
+            <form method="post" action="/users" class="p2 m-4">
+                <!--input type="hidden" name="_csrf" value="{{_csrfToken}}"-->
+                <fieldset class="form-group">
+                    <input type="text" name="name" class="form-control">
+                </fieldset>
+                <button type="submit" class="btn btn-primary btn-block">Send</button>
+            </form>
+        </div>
+    </div>
+
