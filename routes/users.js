@@ -23,7 +23,7 @@ router.get('/:search-movie', function(req, res, next) {
 router.post('/', (req, res) =>{
   let search = req.body.search_movie;
   console.log(search);
-    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}&plot=full&v=2`)
+    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}&plot=short&v=2`)
         .then(res=> res.json())
         .then(body => { const tt = body;
             res.render('movie', {
