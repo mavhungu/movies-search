@@ -11,17 +11,18 @@ router.get('/', function(req, res, next) {
         res.render('index', {
           name: {tt}
         });
+        console.log(tt)
       })
       .catch((e)=>{
         res.status(500).send(e);
       });
 });
-router.get('/:id',(req, res)=>{
+router.get('/movie/:id',(req, res)=>{
     let names = req.params.id;
     fetch(`http://www.omdbapi.com/?apikey=ebb5d535&i=${names}&type=movie`)
         .then(res=> res.json())
         .then(body => { const tt = body;
-            res.render('index', {
+            res.render('movie', {
                 name: {tt},
                 ser: names
             });
@@ -30,6 +31,6 @@ router.get('/:id',(req, res)=>{
         .catch((e)=>{
             res.status(500).send(e);
         });
-})
+});
 
 module.exports = router;
