@@ -2,11 +2,11 @@
 <p>Welcome to {{!title}}</p-->
 
 <div class="container mt-5">
-    <div class="row justify-content-center align-content-center mt-5">
+    <!--div class="row justify-content-center align-content-center mt-5">
         <div class="col-8 mb-4 mt-5" style="background: ghostwhite; border-radius: 4px">
-            <form method="post" action="/users" class="p2 my-4">
+            <form method="post" action="/users" class="p2 my-4"-->
                 <!--input type="hidden" name="_csrf" value="{!{_csrfToken}}"-->
-                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                <!--label class="sr-only" for="inlineFormInputGroup">Username</label>
                 <div class="input-group mb-2">
                     <input type="text" name="search_movie" value="{{#each name}}{{Title}}{{/each}}" class="form-control" id="search_movie" placeholder="Search" required >
                     <div class="input-group-append">
@@ -15,7 +15,19 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div-->
+        <div class="row justify-content-center mt-4">
+            <form class="mt-5" method="post" action="/users">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recipient's username"
+                           name="search_movie" value="{{#each name}}{{Title}}{{/each}}"
+                           aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit" id="button-addon2">Button</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 </div>
     <div class="container">
         <div class="row align-items-center mb-5">
