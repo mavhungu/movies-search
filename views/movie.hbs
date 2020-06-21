@@ -75,12 +75,12 @@
     </div>
 </div>
 
-<div class="container mt-5">
-    <div class="row align-items-center mb-5">
+<div class="container">
+    <div class="row align-items-center justify-content-center mb-3">
         {{#each searched_movie}}
             {{#each Search}}
-                <div class="col-md-6 my-3">
-                    <div class="card border-light">
+                <div class="col-md-6">
+                    <div class="card border-light bg-light">
                         <div class="card-body text-center">
                             <h5 class="card-title text-center font-weight-bold"> {{Title}}</h5>
                             <a href="/users/movie/{{imdbID}}"><img src="{{Poster}}" alt="poster" /></a>
