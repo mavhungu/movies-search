@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row align-items-center justify-content-center mb-5 align-content-center">
         {{#each name}}
-        <div class="col-md-9 mt-5">
+        <div class="col-md-10 mt-4">
             <div class="card mb-3 bg-light">
                 <div class="row no-gutters">
                     <div class="col-md-4">
@@ -9,9 +9,29 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">{{Title}} <span class="">{{Year}}</span></h5>
+                            <!--div class="form-group">
+                                <h5 class="card-title font-weight-bold" id="exampleInputEmail1" aria-describedby="emailHelp">{{Title}} <span>{{Year}}</span> </h5>
+                                    <span class="" id="emailHelp">{{Rated}}</span> | <span>{{Runtime}}</span>
+                            </div-->
+                                <dl class="row mb-0">
+                                    <dt class="col-sm-2 mt-2">
+                                        <!--img src="/icons/Bookmark-plus.svg" role="img" width="52" height="40"-->
+                                        <svg class="bi bi-bookmark-plus text-info" width="5em" height="40" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M4.5 2a.5.5 0 0 0-.5.5v11.066l4-2.667 4 2.667V8.5a.5.5 0 0 1 1 0v6.934l-5-3.333-5 3.333V2.5A1.5 1.5 0 0 1 4.5 1h4a.5.5 0 0 1 0 1h-4zm9-1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13V1.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path fill-rule="evenodd" d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
+                                        </svg>
+                                    </dt>
+                                    <dd class="col-sm-10 mt-2">
+                                        <div class="form-group">
+                                            <h5 class="font-weight-bold" id="exampleInputEmail1" aria-describedby="emailHelp">{{Title}} <span>{{Year}}</span> </h5>
+                                            <div class="" style="font-size: 12px; line-height: 3px">
+                                                <span class="text-muted" id="emailHelp">{{Rated}}</span> | <span>{{Runtime}}</span> | <span>{{Genre}}</span> | <span>{{Released}}</span>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
                             <p class="card-text">{{Plot}}</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
                             {{#each Ratings}}
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -20,14 +40,22 @@
                                     </li>
                                 </ul>
                             {{/each}}
-                            <div class="mt-2">
+                            <!--div class="mt-2">
                                 <span class="text-primary"> Production </span>:
                                 <span>{{Production}}</span>
                             </div>
                                 <div class="">
                                     <span class="text-primary"> Director </span>:
                                     <span>{{Director}}</span>
-                                </div>
+                                </div-->
+                            <dl class="row mt-3">
+                                <dt class="col-sm-3 text-primary">Production</dt>
+                                <dd class="col-sm-9">{{Production}}</dd>
+
+                                    <dt class="col-sm-3 text-primary">Director</dt>
+                                    <dd class="col-sm-9">{{Director}}</dd>
+                            </dl>
+
                         </div>
                     </div>
                 </div>
