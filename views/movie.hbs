@@ -9,89 +9,39 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <!--div class="form-group">
-                                <h5 class="card-title font-weight-bold" id="exampleInputEmail1" aria-describedby="emailHelp">{{Title}} <span>{{Year}}</span> </h5>
-                                    <span class="" id="emailHelp">{{Rated}}</span> | <span>{{Runtime}}</span>
-                            </div-->
-                                <dl class="row mb-0">
-                                    <dt class="col-sm-2 mt-2">
-                                        <!--img src="/icons/Bookmark-plus.svg" width="52" height="40"-->
-                                        <svg class="bi bi-bookmarks-fill text-info" width="4em" height="40" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V4z"/>
-                                            <path d="M14 14l-1-.6V2a1 1 0 0 0-1-1H4.268A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v12z"/>
-                                        </svg>
-                                    </dt>
-                                    <dd class="col-sm-10 mt-2">
-                                        <div class="form-group">
-                                            <h5 class="" id="exampleInputEmail1" aria-describedby="emailHelp"><span class="text-capitalize font-weight-bold">
-                                                {{Title}} </span><span style="font-size: small">({{Year}})</span> </h5>
-                                            <div class="text-muted" style="font-size: 12px; line-height: 3px">
-                                                <span class="text-muted" id="emailHelp">{{Rated}}</span> | <span>{{Runtime}}</span> | <span>{{Genre}}</span> | <span>{{Released}}</span>
-                                            </div>
+                            <dl class="row mb-0">
+                                <dt class="col-sm-2 mt-2">
+                                    <svg class="bi bi-bookmarks-fill text-info" width="4em" height="40" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V4z"/>
+                                        <path d="M14 14l-1-.6V2a1 1 0 0 0-1-1H4.268A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v12z"/>
+                                    </svg>
+                                </dt>
+                                <dd class="col-sm-10 mt-2">
+                                    <div class="form-group">
+                                        <h5 class="" id="exampleInputEmail1" aria-describedby="emailHelp"><span class="text-capitalize font-weight-bold">
+                                            {{Title}} </span><span style="font-size: small">({{Year}})</span> </h5>
+                                        <div class="text-muted" style="font-size: 12px; line-height: 3px">
+                                            <span class="text-muted" id="emailHelp">{{Rated}}</span> | <span>{{Runtime}}</span> | <span>{{Genre}}</span> | <span>{{Released}}</span>
                                         </div>
-                                    </dd>
-                                </dl>
+                                    </div>
+                                </dd>
+                            </dl>
                             <p class="card-text">{{Plot}}</p>
-                            <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
-                            {{#each Ratings}}
-                                <!--ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{Source}}
-                                        <span class="badge badge-primary badge-pill">{{Value}}</span>
-                                    </li>
-                                </ul-->
-                            {{/each}}
-                            <!--div class="mt-2">
-                                <span class="text-primary"> Production </span>:
-                                <span>{{Production}}</span>
-                            </div>
-                                <div class="">
-                                    <span class="text-primary"> Director </span>:
-                                    <span>{{Director}}</span>
-                                </div-->
                             <dl class="row mt-3">
                                 <dt class="col-sm-3 text-primary">Production</dt>
                                 <dd class="col-sm-9">{{Production}}</dd>
-
                                     <dt class="col-sm-3 text-primary">Director</dt>
                                     <dd class="col-sm-9">{{Director}}</dd>
-
-                                <!--dt class="col-sm-3 text-primary">Writer</dt>
-                                <dd class="col-sm-9">{{Writer}}</dd-->
-
                                 <dt class="col-sm-3 text-primary">Actors</dt>
                                 <dd class="col-sm-9">{{Actors}}</dd>
-
-                                <dt class="col-sm-3 text-primary">Country</dt>
-                                <dd class="col-sm-9">{{Country}}</dd>
+                                    <dt class="col-sm-3 text-primary">Country</dt>
+                                    <dd class="col-sm-9">{{Country}}</dd>
                             </dl>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-            <!--div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="{{Poster}}" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div-->
-
-
             {{/each}}
     </div>
 </div>
