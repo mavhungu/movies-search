@@ -5,7 +5,7 @@ var fetch = require('node-fetch');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=man&type=movie`)
+  fetch(`http://www.omdbapi.com/?apikey=API_KEY&s=man&type=movie`)
       .then(res=> res.json())
       .then(body => { const tt = body;
         res.render('index', {
@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 });
 router.get('/movie/:id',(req, res)=>{
     let names = req.params.id;
-    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&i=${names}&type=movie`)
+    fetch(`http://www.omdbapi.com/?apikey=API_KEY&i=${names}&type=movie`)
         .then(res=> res.json())
         .then(body => { const tt = body;
             res.render('movie', {
