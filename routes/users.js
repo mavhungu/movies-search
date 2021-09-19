@@ -8,7 +8,7 @@ var fetch = require('node-fetch');
 router.get('/:search-movie', function(req, res, next) {
     let search = req.params.search_movie;
     console.log(search);
-    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}&plot=full&v=2`)
+    fetch(`http://www.omdbapi.com/?apikey=${process.env.key}&s=${search}&plot=full&v=2`)
         .then(res=> res.json())
         .then(body => { const tt = body;
             res.render('movie', {
@@ -23,7 +23,7 @@ router.get('/:search-movie', function(req, res, next) {
 router.post('/', (req, res) =>{
   let search = req.body.search_movie;
   console.log(search);
-    fetch(`http://www.omdbapi.com/?apikey=ebb5d535&s=${search}&plot=short&v=2`)
+    fetch(`http://www.omdbapi.com/?apikey=${process.env.key}&s=${search}&plot=short&v=2`)
         .then(res=> res.json())
         .then(body => { const tt = body;
             res.render('movie', {
@@ -56,7 +56,7 @@ router.get('/delete/:id', function(req, res, next) {
 router.get('/movie/:id', (req, res)=>{
     const me = req.params.id;
     console.log(me);
-   fetch(`http://www.omdbapi.com/?apikey=ebb5d535&i=${req.params.id}`)
+   fetch(`http://www.omdbapi.com/?apikey=${process.env.key}&i=${req.params.id}`)
        .then(res=> res.json())
        .then(body => { const tt = body;
            res.render('movie', {
