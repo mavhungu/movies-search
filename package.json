@@ -22,7 +22,7 @@
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.18",
     "morgan": "~1.9.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "node-notifier": "^7.0.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.6"
