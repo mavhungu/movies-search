@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./views/**/*.{html,hbs,js}", "./src/**/*.{html,js}"],
-  mode: "jit",
-  purge: ["./views/**/*.{js,ts,jsx,tsx,hbs}"],
   theme: {
     screens: {
       md: { max: "767px" },
