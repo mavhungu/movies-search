@@ -6,30 +6,55 @@
                        name="search_movie" value="{{#each name}}{{Title}}{{/each}}"
                        aria-label="Recipient's username" aria-describedby="button-addon2" required>
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit" id="button-addon2">Button</button>
+                    <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-    <div class="container">
-        <div class="row align-items-center mb-5">
+    <!--div class="container">
+        <div class="row align-items-center mb-5 justify-center items-center">
             {{#each name}}
                 {{#each Search}}
-                    <div class="col-md-6 mt-3">
+                    <div class="col-md-6 mt-3 mb-2">
                         <div class="card border-light bg-light">
                             <div class="card-body text-center">
                                 <h5 class="card-title text-center"><span class="text-capitalize font-weight-bold"> {{Title}}</span> <span class="text-muted" style="font-size: small">( {{Year}} )</span></h5>
-                                <a href="/movie/{{imdbID}}"><img src="{{Poster}}" alt="poster" /></a>
+                                <a class="flex justify-center items-center" href="/movie/{{imdbID}}"><img src="{{Poster}}" class="object-none item-center" alt="poster" /></a>
                                 <p class="card-text text-center"></p>
-                                <span class="text-center" style="line-height: 1px">
+                                <span class="flex justify-center text-center" style="line-height: 1px">
                                     <a href="/users/movie/{{imdbID}}" type="button" class="btn btn-info">
                                         <svg class="bi bi-eye text-light" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
                                             <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                                         </svg>
-                                        View</a>
+                                        View
+                                    </a>
                                 </span>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/each}}
+        </div>
+    </div-->
+
+    <div class="container">
+        <div class="row mb-5 justify-center items-center align-items-center">
+            {{#each name}}
+                {{#each Search}}
+                    <div class="col-md-6 mt-3 mb-2">
+                        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                            <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white"><span>{{Title}}</span> <span>{{Year}}</span></h5>
+                                <a class="flex justify-center item-center content-center" href="/movie/{{imdbID}}"><img src="{{Poster}}" class="justify-center item-center" alt="poster" /></a>
+                            <div class="justify-center items-center sm:flex sm:space-y-0 sm:space-x-4">
+                                <a href="#" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                                    <div class="text-center text-light">
+                                        <a href="/users/movie/{{imdbID}}" class="-mt-1 font-sans text-sm font-semibold text-light">
+                                        <button class="outline-none border border-info font-bold font-IBM mt-8 px-12 py-2 rounded-sm bg-info text-primary transition duration-300 hover:bg-bc hover:text-black md:ml-0 md:my-4"
+                  >View Details</button></a>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

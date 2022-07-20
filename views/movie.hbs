@@ -1,82 +1,163 @@
 <div class="container mt-5">
-    <div class="row align-items-center justify-content-center mb-5 align-content-center">
-        {{#each name}}
-        <div class="col-md-12 mt-4">
-            <div class="card mb-3 bg-light" >
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="{{Poster}}" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <dl class="row mb-0">
-                                <dt class="col-sm-2 mt-2">
-                                    <svg class="bi bi-bookmarks-fill text-info" width="4em" height="40" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V4z"/>
-                                        <path d="M14 14l-1-.6V2a1 1 0 0 0-1-1H4.268A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v12z"/>
-                                    </svg>
-                                </dt>
-                                <dd class="col-sm-10 mt-2">
-                                    <div class="form-group">
-                                        <h5 class="" id="exampleInputEmail1" aria-describedby="emailHelp"><span class="text-capitalize font-weight-bold">
-                                            {{Title}} </span><span style="font-size: small">({{Year}})</span> </h5>
-                                        <div class="text-muted" style="font-size: 12px; line-height: 3px">
-                                            <span class="text-muted" id="emailHelp">{{Rated}}</span> | <span>{{Runtime}}</span> | <span>{{Genre}}</span> | <span>{{Released}}</span>
-                                        </div>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <p class="card-text">{{Plot}}</p>
-                            <dl class="row mt-3">
-                                <dt class="col-sm-3 text-primary">Production</dt>
-                                <dd class="col-sm-9">{{Production}}</dd>
-                                    <dt class="col-sm-3 text-primary">Director</dt>
-                                    <dd class="col-sm-9">{{Director}}</dd>
-                                <dt class="col-sm-3 text-primary">Actors</dt>
-                                <dd class="col-sm-9">{{Actors}}</dd>
-                                    <dt class="col-sm-3 text-primary">Country</dt>
-                                    <dd class="col-sm-9">{{Country}}</dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="row justify-content-center mt-4">
+    <form class="mt-5" method="post" action="/users">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Movie Search"
+          name="search_movie"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+          required
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            id="button-addon2"
+          >Search</button>
         </div>
-            {{/each}}
-    </div>
-</div>
-
-<div class="container">
-    <div class="row align-items-center justify-content-center mb-3">
-        {{#each searched_movie}}
-            {{#each Search}}
-                <div class="col-md-6">
-                    <div class="card border-light bg-light">
-                        <div class="card-body text-center">
-                            <h5 class="card-title text-center"> <span class="text-capitalize font-weight-bold">{{Title}} </span> <span class="text-muted" style="font-size: small">( {{Year}} )</span></h5>
-                            <a href="/users/movie/{{imdbID}}"><img src="{{Poster}}" alt="Movie Poster" /></a>
-                            <p class="card-text text-center"></p>
-                                <span class="" style="line-height: 1px">
-                                    <a href="/users/movie/{{imdbID}}" type="button" class="btn btn-info">
-                                        <svg class="bi bi-eye text-light" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
-                                            <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                        </svg>
-                                        View</a>
-                                </span>
-                            <!--footer-- class="blockquote-footer">Learn something <cite title="Source Title">Everyday</cite></footer-->
-                        </div>
-                    </div>
-                </div>
-            {{/each}}
-        {{/each}}
-    </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div class="container mt-5">
-    <div class="row mt-5 justify-content-center align-content-center align-items-center">
-        {{#each searched_movie}}
-            <p class="text-muted text-center">{{Error}}</p>
-        {{/each}}
-    </div>
+  <div
+    class="row align-items-center justify-content-center mb-5 align-content-center"
+  >
+    {{#each name}}
+      <div class="col-md-12 mt-4">
+        <div class="card mb-3 bg-light">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              {{#if Poster}}
+                <img src="{{Poster}}" class="card-img" alt="..." />
+              {{else}}
+                <img
+                  src="/images/icons/alarm-fill.svg"
+                  class="card-img"
+                  alt="==="
+                />
+              {{/if}}
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <dl class="row mb-0">
+                  <dt class="col-sm-2 mt-2">
+                    <svg
+                      class="bi bi-bookmarks-fill text-info"
+                      width="4em"
+                      height="40"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V4z"
+                      ></path>
+                      <path
+                        d="M14 14l-1-.6V2a1 1 0 0 0-1-1H4.268A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v12z"
+                      ></path>
+                    </svg>
+                  </dt>
+                  <dd class="col-sm-10 mt-2">
+                    <div class="form-group">
+                      <h5
+                        class=""
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      ><span class="text-capitalize font-weight-bold">
+                          {{Title}}
+                        </span><span style="font-size: small">({{Year}})</span>
+                      </h5>
+                      <div
+                        class="text-muted"
+                        style="font-size: 12px; line-height: 3px"
+                      >
+                        <span class="text-muted" id="emailHelp">{{Rated}}</span>
+                        |
+                        <span>{{Runtime}}</span>
+                        |
+                        <span>{{Genre}}</span>
+                        |
+                        <span>{{Released}}</span>
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+                <p class="card-text">{{Plot}}</p>
+                <dl class="row mt-3">
+                  <dt class="col-sm-3 text-primary">Production</dt>
+                  <dd class="col-sm-9">{{Production}}</dd>
+                  <dt class="col-sm-3 text-primary">Director</dt>
+                  <dd class="col-sm-9">{{Director}}</dd>
+                  <dt class="col-sm-3 text-primary">Actors</dt>
+                  <dd class="col-sm-9">{{Actors}}</dd>
+                  <dt class="col-sm-3 text-primary">Country</dt>
+                  <dd class="col-sm-9 text-secondary uppercase">{{Country}}</dd>
+                </dl>
+                <a href="https://www.imdb.com/title/{{imdbID}}" target="_blank">
+                  <button
+                    class="outline-none border border-danger font-bold font-IBM mt-8 px-12 py-2 rounded-sm bg-danger text-primary transition duration-300 hover:bg-bc hover:text-black md:ml-0 md:my-4"
+                  >View on IMDB</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="container">
+  <div class="row align-items-center justify-content-center mb-3">
+    {{#each searched_movie}}
+      {{#each Search}}
+        {{#if Poster}}
+          <div class="col-md-6">
+            <div class="card border-light bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center">
+                  <span class="text-capitalize font-weight-bold">{{Title}}
+                  </span>
+                  <span class="text-muted" style="font-size: small">(
+                    {{Year}}
+                    )</span></h5>
+                <a
+                  class="flex justify-center item-center content-center"
+                  href="/users/movie/{{imdbID}}"
+                >
+                  <img src="{{Poster}}" alt="Movie Poster" />
+                </a>
+                <p class="card-text text-center"></p>
+                <span class="" style="line-height: 1px">
+                  <a
+                    href="/users/movie/{{imdbID}}"
+                    class="-mt-1 font-sans text-sm font-semibold text-light"
+                  >
+                    <button
+                      class="outline-none border border-info font-bold font-IBM mt-8 px-12 py-2 rounded-sm bg-info text-primary transition duration-300 hover:bg-bc hover:text-black md:ml-0 md:my-4"
+                    >View Details</button>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+    {{/each}}
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div
+    class="row mt-5 justify-content-center align-content-center align-items-center"
+  >
+    {{#each searched_movie}}
+      <p class="text-muted text-center">{{Error}}</p>
+    {{/each}}
+  </div>
 </div>
