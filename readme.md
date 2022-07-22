@@ -1,9 +1,9 @@
 # Movie Search App
 Movie Search App built on NodeJS and Express using OMDB API
 
-## Description
+<!--## Description
 
-[Movie](https://github.com/) Movie Search Application.
+[Movie](https://github.com/) Movie Search Application.-->
 
 ## Installation
 
