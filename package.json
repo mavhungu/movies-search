@@ -1,10 +1,11 @@
 {
-  "name": "movieApp",
+  "name": "movie_app",
   "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www -e js,hbs"
+    "dev": "nodemon ./bin/www -e js,hbs",
+    "tailwind":"npx tailwindcss -i ./src/tailwind.css -o ./public/stylesheets/tailwind.css --watch"
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",

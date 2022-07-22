@@ -14,14 +14,13 @@ $ npm install
 ```bash
 Nodejs
 Express
-Hbs- Handlebars
+Handlebars
 Tailwindcss
 
 ```
 
 ## API Used
 https://www.omdbapi.com
-
 
 ## Stay in touch
 

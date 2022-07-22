@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-3">
   <div
     class="row align-items-center justify-content-center mb-5 align-content-center"
   >
@@ -69,7 +69,9 @@
                         class=""
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
-                      ><span class="text-capitalize font-weight-bold">
+                      ><span
+                          class="text-capitalize font-weight-bold text-secondary"
+                        >
                           {{Title}}
                         </span><span style="font-size: small">({{Year}})</span>
                       </h5>
@@ -88,20 +90,26 @@
                     </div>
                   </dd>
                 </dl>
-                <p class="card-text">{{Plot}}</p>
+                <p
+                  class="card-text font-blod font-ibm text-secondary"
+                >{{Plot}}</p>
                 <dl class="row mt-3">
                   <dt class="col-sm-3 text-primary">Production</dt>
-                  <dd class="col-sm-9">{{Production}}</dd>
+                  <dd
+                    class="col-sm-9 font-ibm text-secondary"
+                  >{{Production}}</dd>
                   <dt class="col-sm-3 text-primary">Director</dt>
-                  <dd class="col-sm-9">{{Director}}</dd>
+                  <dd class="col-sm-9 font-ibm text-secondary">{{Director}}</dd>
                   <dt class="col-sm-3 text-primary">Actors</dt>
-                  <dd class="col-sm-9">{{Actors}}</dd>
+                  <dd
+                    class="col-sm-9 font-blod font-ibm text-secondary"
+                  >{{Actors}}</dd>
                   <dt class="col-sm-3 text-primary">Country</dt>
-                  <dd class="col-sm-9 text-secondary uppercase">{{Country}}</dd>
+                  <dd class="col-sm-9 text-secondary">{{Country}}</dd>
                 </dl>
                 <a href="https://www.imdb.com/title/{{imdbID}}" target="_blank">
                   <button
-                    class="outline-none border border-danger font-bold font-IBM mt-8 px-12 py-2 rounded-sm bg-danger text-primary transition duration-300 hover:bg-bc hover:text-black md:ml-0 md:my-4"
+                    class="outline-none border border-secondary font-bold font-ibm mt-8 px-12 py-2 rounded-sm bg-secondary text-white transition duration-300 hover:bg-bc hover:text-white md:ml-0 md:my-4"
                   >View on IMDB</button></a>
               </div>
             </div>
@@ -121,7 +129,9 @@
             <div class="card border-light bg-light">
               <div class="card-body text-center">
                 <h5 class="card-title text-center">
-                  <span class="text-capitalize font-weight-bold">{{Title}}
+                  <span
+                    class="text-capitalize font-weight-bold text-secondary"
+                  >{{Title}}
                   </span>
                   <span class="text-muted" style="font-size: small">(
                     {{Year}}
@@ -133,13 +143,10 @@
                   <img src="{{Poster}}" alt="Movie Poster" />
                 </a>
                 <p class="card-text text-center"></p>
-                <span class="" style="line-height: 1px">
-                  <a
-                    href="/users/movie/{{imdbID}}"
-                    class="-mt-1 font-sans text-sm font-semibold text-light"
-                  >
+                <span class="">
+                  <a href="/users/movie/{{imdbID}}">
                     <button
-                      class="outline-none border border-info font-bold font-IBM mt-8 px-12 py-2 rounded-sm bg-info text-primary transition duration-300 hover:bg-bc hover:text-black md:ml-0 md:my-4"
+                      class="outline-none border border-info font-bold font-ibm mt-8 px-12 py-2 rounded-sm bg-info text-white transition duration-300 hover:bg-bc hover:text-white md:ml-0 md:my-4"
                     >View Details</button>
                   </a>
                 </span>
